@@ -1,0 +1,11 @@
+-- SELECT (ENAME || ' is a ' || JOB) AS "Employee Details" FROM EMP WHERE SAL >2000
+-- SELECT ename,sal,(sal*12+2000) AS salsum FROM EMP WHERE SAL >2000;
+-- SELECT DISTINCT DEPTNO FROM EMP;
+-- SELECT ename,job,sal,comm FROM EMP WHERE sal <2000; -- NULL值
+-- SELECT ename,job,sal,comm FROM EMP WHERE SAL <2000 AND COMM IS NULL;	-- EMP 中没发奖金的
+-- SELECT ename,job,sal,comm FROM EMP WHERE job IN ('SALESMAN', 'PRESIDENT', 'ANALYST');		-- IN 操作符用来查询列值在指定的列表中的行
+-- SELECT ename,job,sal FROM EMP WHERE sal BETWEEN 1000 AND 2000;	-- BETWEEN 操作符查询列值包含在指定区间的行
+-- SELECT ENAME,JOB,SAL FROM EMP WHERE ENAME LIKE 'A%LL%';			-- LIKE 模糊查询 '%SS%', 'A%','%A'
+-- SELECT e.ENAME,e.JOB,e.SAL,d.DNAME FROM EMP e INNER JOIN DEPT d ON e.DEPTNO=d.DEPTNO WHERE e.SAL>2000 		-- 工资大于 2000 元的，员工姓名，部门，工作，工资。
+-- SELECT  e.ENAME,e.job,e.SAL,d.DNAME FROM EMP e,DEPT d WHERE e.DEPTNO=d.DEPTNO AND e.SAL>2000;
+-- SELECT e.ENAME,e.JOB,e.SAL,d.DNAME FROM EMP e RIGHT OUTER JOIN DEPT d ON e.DEPTNO=d.DEPTNO	-- SQL/92 标准右连接
