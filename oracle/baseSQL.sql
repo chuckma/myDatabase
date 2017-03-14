@@ -36,6 +36,8 @@
 -- oracle sql 分页 
 -- SELECT *FROM (SELECT ROWNUM r,ename,job,sal FROM EMP WHERE ROWNUM<=10 ) where r > 5;
 
+--------------------------oracle sql 优化改写------------------------------------
+
 -- 多表插入语句
 -- CREATE TABLE emp1 AS SELECT empno,ename,job from emp where 1 =2;
 -- CREATE TABLE emp2 AS SELECT empno,ename,deptno from emp where 1 =2;
@@ -52,4 +54,5 @@
 -- INTO emp2(empno,ename,deptno)VALUES (empno,ename,deptno)
 -- SELECT empno,ename,job,deptno FROM emp;
 
-
+-- 多字段排序
+SELECT empno,deptno,sal,ename,job FROM emp ORDER BY 2 ASC ,3 DESC;
