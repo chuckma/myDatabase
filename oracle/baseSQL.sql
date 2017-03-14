@@ -36,3 +36,20 @@
 -- oracle sql 分页 
 -- SELECT *FROM (SELECT ROWNUM r,ename,job,sal FROM EMP WHERE ROWNUM<=10 ) where r > 5;
 
+-- 多表插入语句
+-- CREATE TABLE emp1 AS SELECT empno,ename,job from emp where 1 =2;
+-- CREATE TABLE emp2 AS SELECT empno,ename,deptno from emp where 1 =2;
+-- 无条件插入
+-- INSERT ALL
+-- 	INTO emp1(empno,ename,job)VALUES(empno,ename,job)
+-- 	INTO emp2(empno,ename,deptno)VALUES(empno,ename,deptno)
+-- SELECT empno,ename,job,deptno FROM emp WHERE deptno IN(10,20);
+-- 条件插入
+-- INSERT ALL
+-- WHEN job IN ('SALESMAN','MANAGER')THEN
+-- INTO emp1(empno,ename,job)VALUES (empno,ename,job)
+-- WHEN deptno IN('20','30')THEN
+-- INTO emp2(empno,ename,deptno)VALUES (empno,ename,deptno)
+-- SELECT empno,ename,job,deptno FROM emp;
+
+
